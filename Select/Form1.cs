@@ -14,6 +14,7 @@ namespace Select
 {
     public partial class Form1 : Form
     {
+       
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlServer"].ConnectionString);
         public Form1()
         {
@@ -52,6 +53,8 @@ namespace Select
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DateTime? datetime = null;
+            string ad, soyad;
             listBox1.Items.Clear();
             DataSet ds = new DataSet();
             string sql = "Select LastName ,FirstName,BirthDate  from Employees";
@@ -59,7 +62,21 @@ namespace Select
             cmd.Fill(ds);
             foreach (DataRow item in ds.Tables[0].Rows)
             {
-                listBox1.Items.Add($"{item["FirstName"]} {item["LastName"]} {item["BirthDate"]}");
+                ad = item["FirstName"].ToString();
+                soyad = item["LastName"].ToString();
+                var deneme = item["BirthDate"].ToString();
+                if (deneme!="")
+                {
+                    datetime = Convert.ToDateTime(item["BirthDate"].ToString());
+                    listBox1.Items.Add($"{ad} ->> {soyad} ->> {datetime}");
+                }
+                else
+                {
+                    listBox1.Items.Add($"{ad} ->> {soyad} ->>");
+                }
+                //if(isNull(item["BirthDate"]}))
+                // listBox1.Items.Add($"{item["FirstName"]} ->> {item["LastName"]} ->> {item["BirthDate"]}");
+               
 
             }
           //  SqlDataReader rdr = cmd.SelectCommand.ExecuteReader();
