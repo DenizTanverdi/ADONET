@@ -32,7 +32,7 @@ namespace Baglanti
         {
             if (con.State == ConnectionState.Open)
             {
-                //con.Open();
+                //con.Close();
                 MessageBox.Show("Database Acık");
             }
             else
@@ -47,8 +47,18 @@ namespace Baglanti
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Close();
-            MessageBox.Show("Connection Kapandı.");
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+                MessageBox.Show("Database Kapatıldı");
+            }
+            else
+            {
+
+                MessageBox.Show("Database Kapalı.");
+
+              //  con.Open();
+            }
         }
     }
 }
