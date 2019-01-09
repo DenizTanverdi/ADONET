@@ -22,7 +22,7 @@ namespace InsertInto
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            string name = txtBxName.Text;
+            //string name = txtBxName.Text;
             string sql = "Insert Into Categories(CategoryName,Description)Values('"+txtBxName.Text+"','"+txtBxAc.Text+"') ";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
