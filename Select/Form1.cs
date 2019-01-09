@@ -22,6 +22,7 @@ namespace Select
 
         private void btnGet_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string sql = "Select LastName ,FirstName,BirthDate  from Employees";
             SqlCommand cmd = new SqlCommand(sql,con);
             if (con.State == ConnectionState.Closed)
@@ -37,7 +38,7 @@ namespace Select
             {
                 while (dr.Read())
                 {
-                    listBox1.Items.Add($"{dr["FirstName"]} {dr["LastName"]} {dr["BirthDate"]}");
+                    listBox1.Items.Add($"{dr["FirstName"]} {dr["LastName"]} -> {dr["BirthDate"]}");
                 }
                
             }
@@ -47,6 +48,21 @@ namespace Select
             }
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            DataSet ds = new DataSet();
+            string sql = "Select LastName ,FirstName,BirthDate  from Employees";
+            SqlDataAdapter cmd = new SqlDataAdapter(sql, con);
+            cmd.Fill(ds);
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                listBox1.Items.Add($"{item["FirstName"]} {item["LastName"]} {item["BirthDate"]}");
+
+            }
+          //  SqlDataReader rdr = cmd.SelectCommand.ExecuteReader();
         }
     }
 }
