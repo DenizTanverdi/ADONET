@@ -35,7 +35,7 @@ namespace InsertInto
 
         private void btnPro_Click(object sender, EventArgs e)
         {
-             string sql = "Insert Into Categories(CategoryName,Description)Values(@catName,@desc) select @@IDENTITY";
+            /* string sql = "Insert Into Categories(CategoryName,Description)Values(@catName,@desc) select @@IDENTITY";
              SqlCommand cmd = new SqlCommand(sql, con);
 
              con.Open();
@@ -46,8 +46,8 @@ namespace InsertInto
              cmd.ExecuteNonQuery();
             int k = Convert.ToInt32(cmd.ExecuteScalar());
             LblId.Text = "Id: " + k.ToString();
-            con.Close();
-           /* con.Open();
+            con.Close();*/
+           con.Open();
             SqlCommand cmd = new SqlCommand("DEklecat", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@name", txtBxName.Text);
@@ -55,7 +55,7 @@ namespace InsertInto
 
             
             cmd.ExecuteNonQuery();
-            con.Close();*/
+            con.Close();
 
 
         }
