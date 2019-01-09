@@ -33,11 +33,13 @@
             this.txtBxName = new System.Windows.Forms.TextBox();
             this.txtBxAc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPro = new System.Windows.Forms.Button();
+            this.LblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(142, 256);
+            this.btnKaydet.Location = new System.Drawing.Point(142, 241);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(75, 35);
             this.btnKaydet.TabIndex = 0;
@@ -78,11 +80,31 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Acıklama";
             // 
+            // btnPro
+            // 
+            this.btnPro.Location = new System.Drawing.Point(142, 297);
+            this.btnPro.Name = "btnPro";
+            this.btnPro.Size = new System.Drawing.Size(75, 41);
+            this.btnPro.TabIndex = 5;
+            this.btnPro.Text = "Ekle 2";
+            this.btnPro.UseVisualStyleBackColor = true;
+            this.btnPro.Click += new System.EventHandler(this.btnPro_Click);
+            // 
+            // LblId
+            // 
+            this.LblId.AutoSize = true;
+            this.LblId.Location = new System.Drawing.Point(168, 13);
+            this.LblId.Name = "LblId";
+            this.LblId.Size = new System.Drawing.Size(0, 13);
+            this.LblId.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 450);
+            this.Controls.Add(this.LblId);
+            this.Controls.Add(this.btnPro);
             this.Controls.Add(this.txtBxAc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBxName);
@@ -102,6 +124,8 @@
         private System.Windows.Forms.TextBox txtBxName;
         private System.Windows.Forms.TextBox txtBxAc;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPro;
+        private System.Windows.Forms.Label LblId;
     }
 }
 

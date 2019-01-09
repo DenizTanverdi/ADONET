@@ -32,5 +32,32 @@ namespace InsertInto
             con.Close();
             MessageBox.Show("Kaydınız Eklendi.");
         }
+
+        private void btnPro_Click(object sender, EventArgs e)
+        {
+             string sql = "Insert Into Categories(CategoryName,Description)Values(@catName,@desc) select @@IDENTITY";
+             SqlCommand cmd = new SqlCommand(sql, con);
+
+             con.Open();
+             //düzenleme yapılmıstır.
+             cmd.Parameters.AddWithValue("@catName", txtBxName.Text);
+             cmd.Parameters.AddWithValue("@desc", txtBxAc.Text);
+
+             cmd.ExecuteNonQuery();
+            int k = Convert.ToInt32(cmd.ExecuteScalar());
+            LblId.Text = "Id: " + k.ToString();
+            con.Close();
+           /* con.Open();
+            SqlCommand cmd = new SqlCommand("DEklecat", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@name", txtBxName.Text);
+            cmd.Parameters.AddWithValue("@description", txtBxAc.Text);
+
+            
+            cmd.ExecuteNonQuery();
+            con.Close();*/
+
+
+        }
     }
 }
