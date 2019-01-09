@@ -30,8 +30,19 @@ namespace Baglanti
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-            MessageBox.Show("Connection Acıldı.");
+            if (con.State == ConnectionState.Open)
+            {
+                //con.Open();
+                MessageBox.Show("Database Acık");
+            }
+            else
+            {
+          
+                MessageBox.Show("Database Kapalı.");
+
+                con.Open();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
