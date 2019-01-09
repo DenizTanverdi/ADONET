@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baglanti", "Baglanti\Baglan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Select", "Select\Select.csproj", "{F00BE2AB-1205-4736-B934-459B5C67523E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertInto", "InsertInto\InsertInto.csproj", "{9AC48DC6-3E91-4EBF-8137-710C6F732B6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F00BE2AB-1205-4736-B934-459B5C67523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F00BE2AB-1205-4736-B934-459B5C67523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F00BE2AB-1205-4736-B934-459B5C67523E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC48DC6-3E91-4EBF-8137-710C6F732B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC48DC6-3E91-4EBF-8137-710C6F732B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC48DC6-3E91-4EBF-8137-710C6F732B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC48DC6-3E91-4EBF-8137-710C6F732B6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
