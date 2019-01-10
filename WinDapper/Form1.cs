@@ -63,5 +63,28 @@ namespace WinDapper
             
 
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Siparis s = new Siparis();
+            DynamicParameters param = new DynamicParameters();
+            param.Add(" @productId", listBox1.SelectedItem);
+
+            try
+            {
+                //var param = 
+                var siparis = con.Execute("UrunSiparisleri", param , commandType: CommandType.StoredProcedure);
+                dataGridView1.DataSource = siparis;
+                
+               
+
+            }
+            catch (Exception)
+            {
+
+               
+            }
+           
+        }
     }
 }
