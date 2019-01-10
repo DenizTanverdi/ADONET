@@ -55,10 +55,10 @@ namespace WindowsFormsApp1
                 listBox1.DisplayMember = "ProductName";
                 listBox1.ValueMember = "ProductId";
             }
-            catch (Exception)
+            catch (Exception )
             {
 
-               
+                
             }
             
 

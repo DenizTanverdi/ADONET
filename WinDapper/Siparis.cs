@@ -23,9 +23,9 @@ namespace WinDapper
             get { return orderId; }
             set { orderId = value; }
         }
-        private DateTime orderDate;
+        private string orderDate;
 
-        public DateTime OrderDate
+        public string OrderDate
         {
             get { return orderDate; }
             set { orderDate = value; }

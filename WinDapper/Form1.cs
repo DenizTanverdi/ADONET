@@ -70,22 +70,43 @@ namespace WinDapper
             DynamicParameters param = new DynamicParameters();
             param.Add(" @@productId", listBox1.SelectedItem);
            var sayi = ((WinDapper.Products)(listBox1.SelectedItem)).ProductId;
-            
+            DataTable dt = new DataTable();
+
             try
             {
                 //var param = 
                 var siparis = con.Query<Siparis>("UrunSiparisleri", new { productId = sayi}, commandType: CommandType.StoredProcedure);
-                dataGridView1.DataSource = siparis;
                 
-               
+                dataGridView1.DataSource = siparis;
+             //   dataGridView1.DataMember = "ProductId";
+
+
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("Hata :" + ex.Message);
 
-               
             }
            
+        }
+
+        private void dataGridView1_MouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var id = dataGridView1.CurrentRow.Cells[1].Value;
+            var det = con.Query<OrderDetail>("Select * from [Order Details] where OrderId=@orderId", new { orderId = id });
+            dataGridView2.DataSource = det;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridView1_MouseClick(null, null);
+        }
+
+        private void ınsertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Insert insert = new Insert();
+            insert.Show();
         }
     }
 }
