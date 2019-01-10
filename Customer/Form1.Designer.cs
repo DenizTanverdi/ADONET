@@ -97,6 +97,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(224, 277);
             this.listBox2.TabIndex = 3;
+            
             // 
             // Form1
             // 

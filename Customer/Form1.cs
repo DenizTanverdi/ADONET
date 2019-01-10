@@ -51,7 +51,7 @@ namespace Customer
             try
             {
                  tbl = new DataTable();
-                string sql = "Select	( Convert(nvarchar(20),OrderID)++' '+ Convert(nvarchar(20),OrderDate,10)) as Display  from Orders  Where Orders.CustomerId=@Id and Orders.ShipVia=@SId";
+                string sql = "Select	( Convert(nvarchar(20),OrderID)++' '+ Convert(nvarchar(20),OrderDate,10)) as Display,OrderId  from Orders  Where Orders.CustomerId=@Id and Orders.ShipVia=@SId";
                 cmd = new SqlDataAdapter(sql, con);
                 cmd.SelectCommand.Parameters.AddWithValue("@Id", listBox1.SelectedValue);
                 cmd.SelectCommand.Parameters.AddWithValue("@SId", comboBox1.SelectedValue);
@@ -59,7 +59,7 @@ namespace Customer
                 listBox2.DataSource = tbl;
 
                 listBox2.DisplayMember = tbl.Columns["Display"].ToString();
-            
+                listBox2.ValueMember = "OrderId";
                 dataGridView1.DataSource = tbl;
                
             }
@@ -69,5 +69,7 @@ namespace Customer
                 
             }
         }
+
+        
     }
 }

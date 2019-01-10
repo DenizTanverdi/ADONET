@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "Customer\Customer.csproj", "{D603FCCD-6863-4EC4-A935-DEE40FA7ACC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinDapper", "WinDapper\WinDapper.csproj", "{D0C26E8B-2918-4D0D-8D1B-33FF1500B783}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D603FCCD-6863-4EC4-A935-DEE40FA7ACC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D603FCCD-6863-4EC4-A935-DEE40FA7ACC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D603FCCD-6863-4EC4-A935-DEE40FA7ACC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C26E8B-2918-4D0D-8D1B-33FF1500B783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C26E8B-2918-4D0D-8D1B-33FF1500B783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C26E8B-2918-4D0D-8D1B-33FF1500B783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C26E8B-2918-4D0D-8D1B-33FF1500B783}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
