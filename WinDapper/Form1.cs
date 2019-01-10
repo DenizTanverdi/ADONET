@@ -68,12 +68,13 @@ namespace WinDapper
         {
             Siparis s = new Siparis();
             DynamicParameters param = new DynamicParameters();
-            param.Add(" @productId", listBox1.SelectedItem);
-
+            param.Add(" @@productId", listBox1.SelectedItem);
+           var sayi = ((WinDapper.Products)(listBox1.SelectedItem)).ProductId;
+            
             try
             {
                 //var param = 
-                var siparis = con.Execute("UrunSiparisleri", param , commandType: CommandType.StoredProcedure);
+                var siparis = con.Query<Siparis>("UrunSiparisleri", new { productId = sayi}, commandType: CommandType.StoredProcedure);
                 dataGridView1.DataSource = siparis;
                 
                
