@@ -27,17 +27,40 @@ namespace WinDapper
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
             var cat = new Categories();
+          /*  cat.CategoryName = "deniz";
+            cat.Description = "deneme";
+            string sql = "insert into Categories(CategoryName,description) values(@categoryName,@description)";
+            con.Execute(sql, cat);*/
             var category = con.Query<Categories>("Select * from Categories");
             comboBox1.DataSource = category;
             comboBox1.DisplayMember = "CategoryName";
             comboBox1.ValueMember = "CategoryId";
 
-
+          /*  var customer = con.Query<Customer>("Select CustomerId,CompanyName from Customers ");
+            listBox1.DataSource = customer;
+            listBox1.DisplayMember = "CompanyName";
+            listBox1.ValueMember = "CustomerId";*/
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string sp = "8";
+                var customer = con.Query<Products>("Select * from Products where CategoryId=@categoryId  ",comboBox1.SelectedItem );
+                listBox1.DataSource = customer;
+                listBox1.DisplayMember = "ProductName";
+                listBox1.ValueMember = "ProductId";
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            
 
         }
     }
